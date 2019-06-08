@@ -1,0 +1,103 @@
+import React from 'react';
+import ModalHandler from "./ModalHandler";
+
+const ModalTest = ({ handleClose, show, children }) => {
+
+    const showHideClassName = show ? "modal display-block" : "modal display-none";
+
+    return (
+        <div className={showHideClassName}>
+            <section className="modal-main">
+                {children}
+                <button onClick={handleClose}>close</button>
+            </section>
+        </div>
+    );
+};
+
+export default ModalTest;
+
+
+// this is the baby
+
+
+
+
+
+
+// we're just adding classes to the baby here
+
+// ''
+
+// i think i need to import parent here\
+
+// props being passed here  (line 1)
+// omg you really just needed to stop looking at it
+
+
+
+
+import React from 'react';
+import { Modal } from 'reactstrap';
+
+import ModalTest from "./ModalTest";
+
+import SignUpModal from './containers/SignUpModal';
+import LoginModal from './containers/LoginModal';
+
+class ModalHandler extends React.Component {
+    state = { show: false };
+
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
+
+    render() {
+        return (
+            <main>
+                <ModalTest show={this.state.show} handleClose={this.hideModal}>
+                    <p>Modal</p>
+                    <p>Data</p>
+                </ModalTest>
+                <button type="button" onClick={this.showModal}>
+                    open
+        </button>
+            </main>
+        );
+    }
+}
+
+export default ModalHandler;
+
+
+// this is the parent module. it holds the functions to show and hide the thing
+
+
+
+
+
+
+https://www.npmjs.com/package/react-masonry-css
+
+PRETTY COLOURS!
+C9B073
+DFE0A7
+D1E095
+70AB87
+5F7762
+
+4B3C48
+48726E
+75A2AE
+CBB899
+FADFAE
+
+
+
+auth_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTI0NDMxNjUsImlhdCI6MTU1MjM1Njc2NSwic3ViIjoyNTR9.CrhSZCsOzr2l55dL6HWZVrysuGA32bnBd79_fxufeY4"
+message: "Successfully signed in."
+status: "success"
